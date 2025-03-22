@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,16 +34,30 @@ class MainActivity : AppCompatActivity() {
 
         botaologin.setOnClickListener{
             auth.signInWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
-                .addOnSuccessListener {
+                .addOnSuccessListener() {
                     Toast.makeText(this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this@MainActivity, TelaInicial::class.java)
+                    startActivity(intent)
+
+                }
+                .addOnFailureListener(){
+                    Toast.makeText(this, "Login falhou", Toast.LENGTH_SHORT).show()
                 }
         }
 
         botaocadastro.setOnClickListener{
-            auth.createUserWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
-                }
+
+            val intent = Intent(this@MainActivity, TelaCadastro::class.java)
+            startActivity(intent)
+
+            //auth.createUserWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
+            //    .addOnSuccessListener {
+            //        Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
+            //    }
+            //    .addOnFailureListener(){
+            //        Toast.makeText(this, "Nãoo foi possível efetuar o cadastro", Toast.LENGTH_SHORT).show()
+            //    }
         }
     }
 
