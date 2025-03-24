@@ -45,10 +45,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <EditText
-        android:id="@+id/Senha"
+        android:id="@+id/senha"
         android:layout_width="345dp"
         android:layout_height="45dp"
         android:layout_marginTop="44dp"
@@ -69,11 +69,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Senha"
+        app:layout_constraintTop_toBottomOf="@+id/senha"
         app:layout_constraintVertical_bias="0.267" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/email"
         android:layout_width="345dp"
         android:layout_height="45dp"
         android:layout_marginTop="40dp"
@@ -83,5 +83,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Funcionario" />
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="89dp"
+        android:layout_height="44dp"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CadastrarUsuario"
+        app:layout_constraintVertical_bias="0.483" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
