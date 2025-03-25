@@ -37,14 +37,15 @@ class TelaCadastro : AppCompatActivity() {
 
         }
 
-           /* botaoCadastrarUsuario.setOnClickListener{
-                auth.createUserWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
-                    .addOnSuccessListener {
-                        Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
-                    }
-                    .addOnFailureListener(){
-                        Toast.makeText(this, "Nãoo foi possível efetuar o cadastro", Toast.LENGTH_SHORT).show()
-                    }
-            }*/
+        botaoCadastrarUsuario.setOnClickListener{
+
+            auth.createUserWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener(){
+                    Toast.makeText(this, "Nãoo foi possível efetuar o cadastro", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 }
