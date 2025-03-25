@@ -1,15 +1,15 @@
 package com.example.aula20_03
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
-import android.content.Intent
-import android.widget.Toast
 import com.google.firebase.Firebase
 
 class TelaCadastro : AppCompatActivity() {
@@ -37,14 +37,14 @@ class TelaCadastro : AppCompatActivity() {
 
         }
 
-        botaoCadastrarUsuario.setOnClickListener{
-            auth.createUserWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener(){
-                    Toast.makeText(this, "Nãoo foi possível efetuar o cadastro", Toast.LENGTH_SHORT).show()
-                }
-        }
+           /* botaoCadastrarUsuario.setOnClickListener{
+                auth.createUserWithEmailAndPassword(textemail.text.toString(), textsenha.text.toString())
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener(){
+                        Toast.makeText(this, "Nãoo foi possível efetuar o cadastro", Toast.LENGTH_SHORT).show()
+                    }
+            }*/
     }
 }
