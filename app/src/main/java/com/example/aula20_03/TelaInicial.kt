@@ -35,10 +35,10 @@ class TelaInicial : AppCompatActivity() {
             val vNaOH = inputVNaOH.text.toString().toDoubleOrNull() ?: 0.0
             val n = inputN.text.toString().toDoubleOrNull() ?: 0.0
             val f = inputF.text.toString().toDoubleOrNull() ?: 0.0
-            val pesoAmostra = inputPesoAmostra.text.toString().toDoubleOrNull() ?: 1.0
+            val pesoAmostra = inputPesoAmostra.text.toString().toDoubleOrNull()
 
-            if (pesoAmostra == 0.0) {
-                textViewResultado.text = "Erro: Peso da amostra não pode ser zero!"
+            if (pesoAmostra == null || pesoAmostra == 0.0) {
+                textViewResultado.text = "Erro: Peso da amostra não pode ser vazio ou zero!"
             } else {
                 val acidoOleico = (vNaOH * n * f * 28.2) / pesoAmostra
                 textViewResultado.text = "Resultado: %.2f%%".format(acidoOleico)
