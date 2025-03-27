@@ -13,11 +13,13 @@ import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
+import com.google.firebase.FirebaseApp
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        FirebaseApp.initializeApp(this)  // 🔹 Inicializa o Firebase
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
