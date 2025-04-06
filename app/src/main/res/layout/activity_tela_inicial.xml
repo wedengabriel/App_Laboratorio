@@ -7,89 +7,82 @@
     android:layout_height="match_parent"
     tools:context=".TelaInicial">
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Cálculo de Ácido Oleico"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<TextView
+    android:id="@+id/textViewTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Cálculo de Ácido Oleico"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/inputVNaOH"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:hint="Volume de NaOH (mL)"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
+<EditText
+    android:id="@+id/inputVNaOH"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Volume de NaOH (mL)"
+    android:inputType="numberDecimal"
+    app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/inputN"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:hint="Normalidade de NaOH"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputVNaOH" />
+<EditText
+    android:id="@+id/inputN"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Normalidade de NaOH"
+    android:inputType="numberDecimal"
+    app:layout_constraintTop_toBottomOf="@id/inputVNaOH"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="8dp"/>
 
-    <EditText
-        android:id="@+id/inputF"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
-        android:hint="Fator de Correção"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputN" />
+<EditText
+    android:id="@+id/inputF"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Fator de Correção"
+    android:inputType="numberDecimal"
+    app:layout_constraintTop_toBottomOf="@id/inputN"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="8dp"/>
 
-    <EditText
-        android:id="@+id/inputPesoAmostra"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:hint="Peso da Amostra (g)"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputF" />
+<EditText
+    android:id="@+id/inputPesoAmostra"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Peso da Amostra (g)"
+    android:inputType="numberDecimal"
+    app:layout_constraintTop_toBottomOf="@id/inputF"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="Calcular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputPesoAmostra" />
+<Button
+    android:id="@+id/btnCalcular"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Calcular"
+    app:layout_constraintTop_toBottomOf="@id/inputPesoAmostra"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/textViewResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Resultado: -"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCalcular" />
+<TextView
+    android:id="@+id/textViewResultado"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Resultado: -"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toBottomOf="@id/btnCalcular"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
