@@ -8,12 +8,26 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
+
+data class Resultado(
+    val vNaOH: Double,
+    val n: Double,
+    val f: Double,
+    val pesoAmostra: Double,
+    val resultado: Double
+)
 
 class TelaInicial : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_tela_inicial)
+
+        // Inicializa Firebase
+        FirebaseApp.initializeApp(this)
+        val db = FirebaseFirestore.getInstance()
 
         // Ajuste do layout para se adaptar às bordas da tela
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -41,7 +55,19 @@ class TelaInicial : AppCompatActivity() {
                 textViewResultado.text = "Erro: Peso da amostra não pode ser vazio ou zero!"
             } else {
                 val acidoOleico = (vNaOH * n * f * 28.2) / pesoAmostra
+                val resultadoFormatado = "%.2f".format(acidoOleico).toDouble()
                 textViewResultado.text = "Resultado: %.2f%%".format(acidoOleico)
+
+                // Cria objeto Resultado e envia para o Firestore
+                val resultado = Resultado(vNaOH, n, f, pesoAmostra, resultadoFormatado)
+                db.collection("resultados")
+                    .add(resultado)
+                    .addOnSuccessListener {
+                        textViewResultado.append("\n(Salvo com sucesso no Firebase!)")
+                    }
+                    .addOnFailureListener { e ->
+                        textViewResultado.append("\nErro ao salvar: ${e.message}")
+                    }
             }
         }
     }
